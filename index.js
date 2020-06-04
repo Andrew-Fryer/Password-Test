@@ -1,5 +1,17 @@
-let el = document.getElementById("my-form");
-el.onsubmit = e => {
+let passwordInput = document.getElementById("my-password");
+
+const isCorrect = password => password.length === 4;
+
+passwordInput.onchange = () => {
+  if(isCorrect(passwordInput.value)) {
+    passwordInput.setCustomValidity("");
+  } else {
+    passwordInput.setCustomValidity("Password is incorrect");
+  }
+}
+
+let form = document.getElementById("my-form");
+form.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
 };
