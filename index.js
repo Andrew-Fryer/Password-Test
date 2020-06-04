@@ -2,6 +2,9 @@ let el = document.getElementById("my-form");
 el.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
+
+  // refreshing the page can signal to the browser that the form has been submitted
+  window.history.go()
 };
 
 const breakFn = (e, s) => {
