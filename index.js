@@ -4,11 +4,11 @@ el.onsubmit = e => {
   console.log("form submitted");
 };
 
-const breakFn = s => {
-  console.log(s); // put a breakpoint here
+const breakFn = (e, s) => {
+  console.log(s); // put breakpoint here
 }
 for(let elem of document.querySelectorAll('*')) {
-  
-  elem.addEventListener("submit", e => breakFn(`Capturing: ${elem.tagName}`), true);
-  elem.addEventListener("submit", e => breakFn(`Bubbling: ${elem.tagName}`));
+  const event = "keypress";
+  elem.addEventListener(event, e => breakFn(e, `Capturing: ${elem.tagName}`), true);
+  elem.addEventListener(event, e => breakFn(e, `Bubbling: ${elem.tagName}`));
 }
