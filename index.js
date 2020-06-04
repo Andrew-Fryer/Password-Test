@@ -14,6 +14,9 @@ let form = document.getElementById("my-form");
 form.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
+
+  // hopefully get chromium to offer to save the password
+  window.history.replaceState({}, "");
 };
 
 const breakFn = s => {
