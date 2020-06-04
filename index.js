@@ -1,4 +1,5 @@
 let passwordInput = document.getElementById("my-password");
+let form = document.getElementById("my-form");
 
 const isCorrect = password => password.length === 4;
 
@@ -10,7 +11,11 @@ passwordInput.onchange = () => {
   }
 }
 
-let form = document.getElementById("my-form");
+passwordInput.addEventListener("invalid", e => {
+  //form.reset();
+  passwordInput.value = "";
+});
+
 form.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
