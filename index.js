@@ -1,3 +1,5 @@
+let parent = document.getElementById("form-parent");
+
 let passwordInput = document.getElementById("my-password");
 
 const isCorrect = password => password.length === 4;
@@ -14,6 +16,9 @@ let form = document.getElementById("my-form");
 form.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
+
+  // hide form to try to trigger chromium to offer to save the password
+  parent.hidden = true;
 };
 
 const breakFn = s => {
