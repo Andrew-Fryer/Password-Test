@@ -37,11 +37,13 @@ passwordInput.onchange = () => {
     passwordInput.setCustomValidity("Password is incorrect");
   }
 }
+passwordInput.setCustomValidity("Password cannot be empty");
 
 passwordInput.addEventListener("invalid", e => {
   //form.reset();
   passwordInput.value = "";
   e.preventDefault();
+  alert("Password is incorrect.");
 });
 
 form.onsubmit = e => {
