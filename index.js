@@ -20,4 +20,9 @@ passwordInput.addEventListener("invalid", e => {
 form.onsubmit = e => {
   e.preventDefault();
   console.log("form submitted");
+
+  setTimeout(function(){
+    form.hidden = true; // this happens for the password modal anyway
+    history.replaceState(null, document.title); // this should signal to the browser that the login was successful
+}, 1);
 };
