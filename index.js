@@ -18,6 +18,6 @@ passwordInput.addEventListener("invalid", e => {
 });
 
 form.onsubmit = e => {
-  e.preventDefault();
+  //e.preventDefault();
   console.log("form submitted");
 };
