@@ -26,3 +26,4 @@ form.onsubmit = e => {
     history.replaceState(null, document.title); // this should signal to the browser that the login was successful
 }, 1);
 };
+
